@@ -1,6 +1,3 @@
 [submodule "submodules/pushwoosh-android-sdk"]
 	path = submodules/pushwoosh-android-sdk
 	url = https://github.com/Pushwoosh/pushwoosh-android-sdk.git
-[submodule "submodules/pushwoosh-ios-sdk"]
-	path = submodules/pushwoosh-ios-sdk
-	url = https://github.com/Pushwoosh/pushwoosh-ios-sdk.git

@@ -39,18 +39,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pushwoosh.linkwith.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <Compile Include="Pushwoosh.linkwith.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="..\..\..\submodules\pushwoosh-ios-sdk\Framework\Pushwoosh.framework\Versions\A\Pushwoosh">
-      <Link>Pushwoosh</Link>
+    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="Pushwoosh">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </ObjcBindingNativeLibrary>
   </ItemGroup>
 </Project>
