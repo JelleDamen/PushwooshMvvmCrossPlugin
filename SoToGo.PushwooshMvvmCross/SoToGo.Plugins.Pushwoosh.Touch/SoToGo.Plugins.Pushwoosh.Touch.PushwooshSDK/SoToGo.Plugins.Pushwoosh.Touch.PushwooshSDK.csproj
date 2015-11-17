@@ -39,8 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pushwoosh.linkwith.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Compile Include="PushNotificationManager.linkwith.cs">
+      <DependentUpon>PushNotificationManager.a</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -51,8 +51,8 @@
     <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="Pushwoosh">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <ObjcBindingNativeLibrary Include="..\..\..\submodules\pushwoosh-xamarin\iOS\Pushwoosh\PushNotificationManager.a">
+      <Link>PushNotificationManager.a</Link>
     </ObjcBindingNativeLibrary>
   </ItemGroup>
 </Project>

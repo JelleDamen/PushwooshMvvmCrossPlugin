@@ -1,3 +1,6 @@
 [submodule "submodules/pushwoosh-android-sdk"]
 	path = submodules/pushwoosh-android-sdk
 	url = https://github.com/Pushwoosh/pushwoosh-android-sdk.git
+[submodule "submodules/pushwoosh-xamarin"]
+	path = submodules/pushwoosh-xamarin
+	url = https://github.com/Pushwoosh/pushwoosh-xamarin.git

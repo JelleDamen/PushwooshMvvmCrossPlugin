@@ -20,29 +20,29 @@ namespace SoToGo.Plugins.Pushwoosh.Touch
 				}
 			}
 
-			pushmanager.RegisterForPushNotifications ();
-			pushmanager.StartLocationTracking ();
+			Mvx.Resolve<IPushwooshService>().Register ();
 
-			return base.FinishedLaunching(app, options);
+			return true;
 		}
 
 		public override void RegisteredForRemoteNotifications (UIApplication application, NSData deviceToken)
 		{
 			PushNotificationManager.PushManager.HandlePushRegistration (deviceToken);
-			(Mvx.Resolve<IPushwooshService> () as PushwooshServiceTouch).OnRegistered (deviceToken.Description);
+			Mvx.Resolve<IPushwooshService> ().OnRegistered (deviceToken.Description);
 		}
 
 		public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
 		{
 			PushNotificationManager.PushManager.HandlePushRegistrationFailure (error);
-			(Mvx.Resolve<IPushwooshService> () as PushwooshServiceTouch).OnRegisteredError (error.Description);
+			Mvx.Resolve<IPushwooshService> ().OnRegisteredError (error.Description);
 		}
 
 		public override void ReceivedRemoteNotification (UIApplication application, NSDictionary userInfo)		
 		{
 			PushNotificationManager.PushManager.HandlePushReceived (userInfo);
-			(Mvx.Resolve<IPushwooshService> () as PushwooshServiceTouch).OnMessageReceive (userInfo.Description);
+			Mvx.Resolve<IPushwooshService> ().OnMessageReceive (userInfo.Description);
 		}
+
 	}
 }
 

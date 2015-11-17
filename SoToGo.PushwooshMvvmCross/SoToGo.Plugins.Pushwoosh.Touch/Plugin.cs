@@ -5,7 +5,6 @@ using Cirrious.CrossCore;
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {
 	public class Plugin : IMvxPlugin
-
 	{
 		public void Load()
 		{

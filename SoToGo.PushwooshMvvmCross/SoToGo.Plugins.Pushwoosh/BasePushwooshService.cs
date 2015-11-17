@@ -4,12 +4,6 @@ namespace SoToGo.Plugins.Pushwoosh
 {
 	public abstract class BasePushwooshService
 	{
-		public delegate void MessageReceiveDelegate(string message);
-		public delegate void RegisteredDelegate(string registrationId);
-		public delegate void UnregisteredDelegate(string registrationId);
-		public delegate void UnregisteredErrorDelegate(string error);
-		public delegate void RegisteredErrorDelegate(string error);
-
 		public virtual MessageReceiveDelegate MessageReceiveEvent { get; set; }
 		public virtual RegisteredDelegate RegisteredEvent { get; set; }
 		public virtual UnregisteredDelegate UnregisteredEvent { get; set; }
