@@ -10,7 +10,13 @@ namespace SoToGo.Plugins.Pushwoosh
 
 	public interface IPushwooshService
 	{
+		/// <summary>
+		/// Register for push notifications
+		/// </summary>
 		void Register();
+		/// <summary>
+		/// Unregister for push notifications
+		/// </summary>
 		void UnRegister();
 
 		MessageReceiveDelegate MessageReceiveEvent { get; set; }

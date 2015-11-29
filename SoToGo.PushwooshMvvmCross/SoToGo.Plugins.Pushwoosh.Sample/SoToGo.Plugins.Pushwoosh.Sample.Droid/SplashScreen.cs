@@ -1,13 +1,13 @@
 using Android.App;
 using Android.Content.PM;
 using Cirrious.MvvmCross.Droid.Views;
+using Android.Content;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Droid
 {
     [Activity(
 		Label = "SoToGo.Plugins.Pushwoosh.Sample.Droid"
 		, MainLauncher = true
-		, Icon = "@drawable/icon"
 		, Theme = "@style/Theme.Splash"
 		, NoHistory = true
 		, ScreenOrientation = ScreenOrientation.Portrait)]
@@ -17,5 +17,7 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Droid
             : base(Resource.Layout.SplashScreen)
         {
         }
+
+
     }
 }

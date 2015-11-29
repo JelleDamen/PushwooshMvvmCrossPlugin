@@ -4,11 +4,12 @@ using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
 using UIKit;
+using SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Touch.Views
 {
     [Register("FirstView")]
-    public class FirstView : MvxViewController
+	public class FirstView : MvxViewController<FirstViewModel>
     {
         public override void ViewDidLoad()
         {
@@ -31,5 +32,6 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch.Views
             set.Bind(textField).To(vm => vm.Hello);
             set.Apply();
         }
+
     }
 }

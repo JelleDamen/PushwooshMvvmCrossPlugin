@@ -9,8 +9,13 @@ namespace SoToGo.Plugins.Pushwoosh.Droid
 	{
 		protected override void OnRegisterActionReceive (Context p0, Intent intent)
 		{
-			PushwooshMessageHelper.CheckMessage (intent);
+			var service = Mvx.Resolve<IPushwooshService> () as PushwooshServiceDroid;
+			if (service != null)
+			{
+				service.CheckIntent (intent);
+			}
 		}
+
 	}
 }
 

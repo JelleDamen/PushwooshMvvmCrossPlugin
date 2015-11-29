@@ -19,9 +19,6 @@ namespace SoToGo.Plugins.Pushwoosh.Touch
 					pushmanager.HandlePushReceived (options);
 				}
 			}
-
-			Mvx.Resolve<IPushwooshService>().Register ();
-
 			return true;
 		}
 

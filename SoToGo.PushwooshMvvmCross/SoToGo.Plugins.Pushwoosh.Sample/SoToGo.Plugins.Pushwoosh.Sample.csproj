@@ -52,4 +52,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoToGo.Plugins.Pushwoosh\SoToGo.Plugins.Pushwoosh.csproj">
+      <Project>{6989F26A-95AA-4302-8B28-947F6182F2BD}</Project>
+      <Name>SoToGo.Plugins.Pushwoosh</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
