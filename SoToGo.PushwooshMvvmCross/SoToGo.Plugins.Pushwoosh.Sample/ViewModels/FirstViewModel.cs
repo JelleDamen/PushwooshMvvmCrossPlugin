@@ -17,7 +17,7 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels
 		{
 			base.Start ();
 
-			//Mvx.Resolve<IPushwooshService>().Register ();
+			Mvx.Resolve<IPushwooshService>().Register ();
 		}
 
     }

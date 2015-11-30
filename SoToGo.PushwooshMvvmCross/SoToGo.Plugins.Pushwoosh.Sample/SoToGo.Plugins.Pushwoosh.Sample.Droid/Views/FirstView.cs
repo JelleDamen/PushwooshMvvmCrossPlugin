@@ -16,17 +16,9 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Droid.Views
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-			//ViewModel.Initialize ();
 
             SetContentView(Resource.Layout.FirstView);
         }
-
-		protected override void OnResume ()
-		{
-			base.OnResume ();
-			(Mvx.Resolve<IPushwooshService> () as PushwooshServiceDroid).Initialize (this);
-			Mvx.Resolve<IPushwooshService>().Register ();
-		}
 
 		protected override void OnNewIntent(Intent intent)
 		{
