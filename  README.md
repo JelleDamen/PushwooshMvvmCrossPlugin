@@ -2,7 +2,7 @@
 MvvmCross plugin that wraps the native Pushwoosh SDK
 
 ## iOS
-On iOS use the MvxPushwooshApplicationDelegate as a base AppDelegate
+On iOS use the MvxPushwooshApplicationDelegate as a base class for your AppDelegate
 
 	[Register("AppDelegate")]
 	public partial class AppDelegate : MvxPushwooshApplicationDelegate
@@ -26,7 +26,7 @@ On iOS use the MvxPushwooshApplicationDelegate as a base AppDelegate
 	}
 	
 ## Android
-On android you have to set some permissions in the AndroidManifest.xml (See sample project or pushwoosh documentation). On the main activity you have to set some intent filter and you have to override the OnNewIntent method in the main activity.
+On android you have to set some permissions in the AndroidManifest.xml (See sample project or Pushwoosh documentation). On the main activity you have to set an intent filter and you have to override the OnNewIntent method in the main activity.
 
 	[Activity(Label = "View for FirstViewModel")]
 		[IntentFilter (new string[]{"pushwoosh.sample.droid.MESSAGE"}, Categories = new string[]{"android.intent.category.DEFAULT"})]
