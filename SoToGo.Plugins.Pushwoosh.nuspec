@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>SoToGo.Plugins.Pushwoosh</id>
-		<version>1.0.0-beta3</version>
+		<version>1.0.0-beta5</version>
 		<title>Pushwoosh plugin for MvvmCross</title>
 		<authors>Jelle Damen</authors>
 		<owners>JelleDamen</owners>
@@ -44,12 +44,12 @@ MvvmCross plugin that wraps the native Pushwoosh SDK</description>
 		<file src="SoToGo.PushwooshMvvmCross/SoToGo.Plugins.Pushwoosh.Droid/bin/Release/SoToGo.Plugins.Pushwoosh.dll" target="lib/dotnet/SoToGo.Plugins.Pushwoosh.dll" />
 		
 		<!-- droid -->
-		<file src="SoToGo.PushwooshMvvmCross/SoToGo.Plugins.Pushwoosh.Droid/bin/Release/SoToGo.Plugins.Pushwoosh.*.dll" target="lib/MonoAndroid" />
-		<file src="nuspec/droid_content/PushwooshPluginBootstrap.cs.pp" target="content/MonoAndroid/bootstrap/PushwooshPluginBootstrap.cs.pp" />
+		<file src="SoToGo.PushwooshMvvmCross/SoToGo.Plugins.Pushwoosh.Droid/bin/Release/SoToGo.Plugins.Pushwoosh*.dll" target="lib/MonoAndroid" />
+		<file src="nuspec/droid_content/PushwooshPluginBootstrap.cs.pp" target="content/MonoAndroid/Bootstrap/PushwooshPluginBootstrap.cs.pp" />
 
 		<!-- touch -->
-		<file src="SoToGo.PushwooshMvvmCross/SoToGo.Plugins.Pushwoosh.Touch/bin/Release/SoToGo.Plugins.Pushwoosh.*.dll" target="lib/Xamarin.iOS10" />
-		<file src="nuspec/touch_content/PushwooshPluginBootstrap.cs.pp" target="content/Xamarin.iOS10/bootstrap/PushwooshPluginBootstrap.cs.pp" />
+		<file src="SoToGo.PushwooshMvvmCross/SoToGo.Plugins.Pushwoosh.Touch/bin/Release/SoToGo.Plugins.Pushwoosh*.dll" target="lib/Xamarin.iOS10" />
+		<file src="nuspec/touch_content/PushwooshPluginBootstrap.cs.pp" target="content/Xamarin.iOS10/Bootstrap/PushwooshPluginBootstrap.cs.pp" />
 
 	</files>
 </package>
