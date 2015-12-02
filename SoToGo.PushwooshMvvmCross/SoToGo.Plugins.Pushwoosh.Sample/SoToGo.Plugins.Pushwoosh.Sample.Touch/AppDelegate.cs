@@ -20,7 +20,6 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 			var setup = new Setup(this, _window);
 			setup.Initialize();
 
-			//Publish all incoming messages through MvxMessenger
 			Mvx.Resolve<IPushwooshService> ().MessageReceiveEvent = (n) => {
 				InvokeOnMainThread (() => {
 					new UIAlertView ("Notification", n.Message, null, "Ok").Show ();
