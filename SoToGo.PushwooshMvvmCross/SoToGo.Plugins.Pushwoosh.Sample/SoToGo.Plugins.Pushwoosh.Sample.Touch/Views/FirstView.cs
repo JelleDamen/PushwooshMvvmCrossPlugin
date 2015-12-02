@@ -11,6 +11,7 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch.Views
     [Register("FirstView")]
 	public class FirstView : MvxViewController<FirstViewModel>
     {
+
         public override void ViewDidLoad()
         {
             View = new UIView { BackgroundColor = UIColor.White };
@@ -32,6 +33,12 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch.Views
             set.Bind(textField).To(vm => vm.Hello);
             set.Apply();
         }
+
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+			ViewModel.HandleQueuedMessages ();
+		}
 
     }
 }

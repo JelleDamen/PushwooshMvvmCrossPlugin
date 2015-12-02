@@ -4,6 +4,7 @@ using Android.Content;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid.Platform;
 using Pushwoosh;
+using Android.Widget;
 
 namespace SoToGo.Plugins.Pushwoosh.Droid
 {
@@ -49,7 +50,7 @@ namespace SoToGo.Plugins.Pushwoosh.Droid
 			CurrentManager.OnStartup (MainActivity);
 
 			//Check initial intent for push messages
-			CheckIntent(activity.Intent);
+			CheckIntent(activity.Intent, true);
 
 			_isInitialized = true;
 		}
@@ -61,7 +62,7 @@ namespace SoToGo.Plugins.Pushwoosh.Droid
 			MainActivity.RegisterReceiver(_localRegisterBroadcastReceiver, new IntentFilter(MainActivity.PackageName + "." + PushManager.RegisterBroadCastAction));
 		}
 
-		public virtual void Register ()
+		public virtual void Register()
 		{
 			CheckInitialize ();
 
@@ -88,11 +89,14 @@ namespace SoToGo.Plugins.Pushwoosh.Droid
 			}
 		}
 
-		public void CheckIntent(Intent intent)
+		public void CheckIntent(Intent intent, bool storeInQueue = false)
 		{
 			if (intent != null) {
 				if (intent.HasExtra (PushManager.PushReceiveEvent)) {
-					OnMessageReceive (intent.Extras.GetString (PushManager.PushReceiveEvent));
+					if(storeInQueue)
+						StoreInMessageQueue (intent.Extras.GetString (PushManager.PushReceiveEvent));
+					else
+						OnMessageReceive (intent.Extras.GetString (PushManager.PushReceiveEvent));
 				} else if (intent.HasExtra (PushManager.RegisterEvent)) {
 					OnRegistered (intent.Extras.GetString (PushManager.RegisterEvent));
 				} else if (intent.HasExtra (PushManager.UnregisterEvent)) {

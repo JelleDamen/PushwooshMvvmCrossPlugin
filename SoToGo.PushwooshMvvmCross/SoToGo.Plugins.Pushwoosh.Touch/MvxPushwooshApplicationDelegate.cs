@@ -4,6 +4,7 @@ using UIKit;
 using Foundation;
 using SoToGo.Plugins.Pushwoosh.Touch.PushwooshSDK;
 using Cirrious.CrossCore;
+using System.Threading.Tasks;
 
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {
@@ -15,8 +16,12 @@ namespace SoToGo.Plugins.Pushwoosh.Touch
 			pushmanager.Delegate = this;
 
 			if (options != null) {
+
 				if (options.ContainsKey (UIApplication.LaunchOptionsRemoteNotificationKey)) { 
-					pushmanager.HandlePushReceived (options);
+
+					var data = (NSDictionary)options.ValueForKey (UIApplication.LaunchOptionsRemoteNotificationKey);
+
+					HandleRemoteNotification (data, true);
 				}
 			}
 			return true;
@@ -36,8 +41,19 @@ namespace SoToGo.Plugins.Pushwoosh.Touch
 
 		public override void ReceivedRemoteNotification (UIApplication application, NSDictionary userInfo)		
 		{
-			PushNotificationManager.PushManager.HandlePushReceived (userInfo);
-			Mvx.Resolve<IPushwooshService> ().OnMessageReceive (userInfo.Description);
+			HandleRemoteNotification (userInfo);
+		}
+
+		private void HandleRemoteNotification(NSDictionary messageData, bool storeInQueue = false)
+		{
+			PushNotificationManager.PushManager.HandlePushReceived (messageData);
+			NSError error;
+			var data = NSJsonSerialization.Serialize (messageData, NSJsonWritingOptions.PrettyPrinted, out error);
+
+			if(storeInQueue)
+				Mvx.Resolve<IPushwooshService> ().StoreInMessageQueue (data.ToString());
+			else
+				Mvx.Resolve<IPushwooshService> ().OnMessageReceive (data.ToString());
 		}
 
 	}

@@ -9,7 +9,7 @@ namespace SoToGo.Plugins.Pushwoosh.Touch
 		public void Load()
 		{
 			Mvx.RegisterSingleton<IPushwooshService>(() => new PushwooshServiceTouch());
-
+			Mvx.RegisterSingleton<INotificationParser> (()=> new TouchNotificationParser ());
 		}
 	}
 }

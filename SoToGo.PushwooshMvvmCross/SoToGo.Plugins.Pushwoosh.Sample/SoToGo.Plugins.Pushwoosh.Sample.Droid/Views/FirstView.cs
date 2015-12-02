@@ -5,6 +5,7 @@ using Cirrious.CrossCore;
 using SoToGo.Plugins.Pushwoosh.Droid;
 using SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels;
 using Android.Content;
+using Android.Widget;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Droid.Views
 {
@@ -19,6 +20,19 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Droid.Views
 
             SetContentView(Resource.Layout.FirstView);
         }
+
+		protected override void OnViewModelSet ()
+		{
+			base.OnViewModelSet ();
+
+			Mvx.Resolve<IPushwooshService> ().MessageReceiveEvent = (n) => {
+				RunOnUiThread (() => {
+					Toast.MakeText (this, n.Message, ToastLength.Long).Show ();
+				});	
+			};
+
+			ViewModel.HandleQueuedMessages ();
+		}
 
 		protected override void OnNewIntent(Intent intent)
 		{

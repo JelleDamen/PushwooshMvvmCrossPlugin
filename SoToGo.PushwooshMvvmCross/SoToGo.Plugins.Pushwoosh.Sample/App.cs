@@ -1,4 +1,5 @@
 using Cirrious.CrossCore.IoC;
+using Cirrious.CrossCore;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Core
 {
@@ -10,8 +11,10 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-				
+
             RegisterAppStart<ViewModels.FirstViewModel>();
+
         }
+
     }
 }

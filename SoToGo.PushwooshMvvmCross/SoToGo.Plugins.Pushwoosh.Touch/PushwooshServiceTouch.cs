@@ -1,5 +1,6 @@
 ﻿using System;
 using SoToGo.Plugins.Pushwoosh.Touch.PushwooshSDK;
+using Cirrious.CrossCore;
 
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {
@@ -7,7 +8,7 @@ namespace SoToGo.Plugins.Pushwoosh.Touch
 	{
 		public PushwooshServiceTouch ()
 		{
-
+			
 		}
 
 		public virtual PushNotificationManager CurrentManager {

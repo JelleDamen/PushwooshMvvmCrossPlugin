@@ -9,7 +9,7 @@ namespace SoToGo.Plugins.Pushwoosh.Droid
 		public void Load()
 		{
 			Mvx.RegisterSingleton<IPushwooshService>(() => new PushwooshServiceDroid());
-
+			Mvx.RegisterSingleton<INotificationParser> (()=> new DroidNotificationParser ());
 		}
 	}
 }

@@ -2,12 +2,6 @@
 
 namespace SoToGo.Plugins.Pushwoosh
 {
-	public delegate void MessageReceiveDelegate(string message);
-	public delegate void RegisteredDelegate(string registrationId);
-	public delegate void UnregisteredDelegate(string registrationId);
-	public delegate void UnregisteredErrorDelegate(string error);
-	public delegate void RegisteredErrorDelegate(string error);
-
 	public interface IPushwooshService
 	{
 		/// <summary>
@@ -19,11 +13,40 @@ namespace SoToGo.Plugins.Pushwoosh
 		/// </summary>
 		void UnRegister();
 
-		MessageReceiveDelegate MessageReceiveEvent { get; set; }
-		RegisteredDelegate RegisteredEvent { get; set; }
-		UnregisteredDelegate UnregisteredEvent { get; set; }
-		UnregisteredErrorDelegate UnregisteredErrorEvent { get; set; }
-		RegisteredErrorDelegate RegisteredErrorEvent { get; set; }
+		/// <summary>
+		/// Gets or sets the message receive event.
+		/// Notification argument represents incoming message
+		/// </summary>
+		/// <value>The message receive event.</value>
+		Action<Notification> MessageReceiveEvent { get; set; }
+		/// <summary>
+		/// Gets or sets the registered event.
+		/// String argument represents registrationID
+		/// </summary>
+		/// <value>The registered event.</value>
+		Action<string> RegisteredEvent { get; set; }
+		/// <summary>
+		/// Gets or sets the unregistered event.
+		/// String argument represents registrationID
+		/// </summary>
+		/// <value>The unregistered event.</value>
+		Action<string> UnregisteredEvent { get; set; }
+
+		/// <summary>
+		/// Gets or sets the unregistered error event.
+		/// String argument represents error message
+		/// </summary>
+		/// <value>The unregistered error event.</value>
+		Action<string> UnregisteredErrorEvent { get; set; }
+		/// <summary>
+		/// Gets or sets the registered error event.
+		/// String argument represents error message
+		/// </summary>
+		/// <value>The registered error event.</value>
+		Action<string> RegisteredErrorEvent { get; set; }
+
+		void StoreInMessageQueue (string data);
+		void FlushMessageQueue();
 
 		void OnMessageReceive (string message);
 		void OnRegistered (String registrationId);

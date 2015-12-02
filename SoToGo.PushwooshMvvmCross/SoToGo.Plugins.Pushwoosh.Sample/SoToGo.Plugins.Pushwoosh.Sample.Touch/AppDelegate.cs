@@ -4,6 +4,7 @@ using SoToGo.Plugins.Pushwoosh.Touch;
 using SoToGo.Plugins.Pushwoosh.Sample.Touch.Views;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
+using SoToGo.Plugins.Pushwoosh.Sample.Core;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 {
@@ -19,12 +20,21 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 			var setup = new Setup(this, _window);
 			setup.Initialize();
 
+			//Publish all incoming messages through MvxMessenger
+			Mvx.Resolve<IPushwooshService> ().MessageReceiveEvent = (n) => {
+				InvokeOnMainThread (() => {
+					new UIAlertView ("Notification", n.Message, null, "Ok").Show ();
+				});
+			};
+
 			var startup = Mvx.Resolve<IMvxAppStart>();
 			startup.Start();
 
 			_window.MakeKeyAndVisible();
 
-			return base.FinishedLaunching (app, options);
+			var r = base.FinishedLaunching (app, options);
+
+			return r;
 		}
 	}
 }

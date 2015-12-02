@@ -20,5 +20,6 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Droid
         {
             return new DebugTrace();
         }
+			
     }
 }

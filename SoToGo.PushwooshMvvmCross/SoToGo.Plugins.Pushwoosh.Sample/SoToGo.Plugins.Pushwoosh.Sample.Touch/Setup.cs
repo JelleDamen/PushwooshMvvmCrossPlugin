@@ -4,6 +4,7 @@ using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Touch.Platform;
 using UIKit;
 using SoToGo.Plugins.Pushwoosh.Sample.Core;
+using Cirrious.CrossCore;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 {
@@ -28,5 +29,6 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 		{
 			return new DebugTrace();
 		}
+
 	}
 }

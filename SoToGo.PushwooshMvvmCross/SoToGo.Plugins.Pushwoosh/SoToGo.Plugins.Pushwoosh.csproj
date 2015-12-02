@@ -34,6 +34,8 @@
     <Compile Include="PluginLoader.cs" />
     <Compile Include="IPushwooshService.cs" />
     <Compile Include="BasePushwooshService.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="INotificationParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
