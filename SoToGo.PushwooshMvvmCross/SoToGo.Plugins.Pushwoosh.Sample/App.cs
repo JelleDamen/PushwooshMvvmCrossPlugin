@@ -1,9 +1,10 @@
-using Cirrious.CrossCore.IoC;
-using Cirrious.CrossCore;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform.IoC;
+
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Core
 {
-    public class App : Cirrious.MvvmCross.ViewModels.MvxApplication
+    public class App : MvxApplication
     {
         public override void Initialize()
         {

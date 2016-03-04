@@ -1,10 +1,10 @@
 ﻿using System;
-using Cirrious.MvvmCross.Touch.Platform;
 using UIKit;
 using Foundation;
 using SoToGo.Plugins.Pushwoosh.Touch.PushwooshSDK;
-using Cirrious.CrossCore;
 using System.Threading.Tasks;
+using MvvmCross.iOS.Platform;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {

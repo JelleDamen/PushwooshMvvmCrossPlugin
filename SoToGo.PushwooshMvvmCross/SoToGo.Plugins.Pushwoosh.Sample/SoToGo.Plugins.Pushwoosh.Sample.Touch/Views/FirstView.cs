@@ -1,10 +1,11 @@
-using Cirrious.MvvmCross.Binding.BindingContext;
-using Cirrious.MvvmCross.Touch.Views;
 using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
 using UIKit;
 using SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels;
+using MvvmCross.iOS.Views;
+using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Touch.Views
 {
@@ -32,6 +33,8 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Touch.Views
             set.Bind(label).To(vm => vm.Hello);
             set.Bind(textField).To(vm => vm.Hello);
             set.Apply();
+
+			Mvx.Resolve<IPushwooshService>().Register ();
         }
 
 		public override void ViewDidAppear (bool animated)

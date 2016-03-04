@@ -1,10 +1,10 @@
 ﻿using System;
 using Android.App;
 using Android.Content;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid.Platform;
 using Pushwoosh;
 using Android.Widget;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Droid.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Droid
 {

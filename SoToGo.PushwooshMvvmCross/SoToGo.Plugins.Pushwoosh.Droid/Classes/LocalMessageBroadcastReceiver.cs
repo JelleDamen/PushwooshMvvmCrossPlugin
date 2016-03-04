@@ -1,7 +1,7 @@
 ﻿using System;
-using Cirrious.CrossCore;
 using Android.Content;
 using Pushwoosh;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Droid
 {
@@ -15,6 +15,7 @@ namespace SoToGo.Plugins.Pushwoosh.Droid
 				service.OnMessageReceive (msg);
 			}
 		}
+
 	}
 }
 

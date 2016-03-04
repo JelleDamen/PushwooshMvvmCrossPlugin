@@ -1,7 +1,7 @@
 ﻿using System;
 using Pushwoosh;
 using Android.Content;
-using Cirrious.CrossCore;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Droid
 {

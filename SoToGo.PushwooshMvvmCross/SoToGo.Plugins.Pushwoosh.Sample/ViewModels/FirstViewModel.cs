@@ -1,6 +1,6 @@
-using Cirrious.MvvmCross.ViewModels;
-using Cirrious.CrossCore;
 using System;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels
 {
@@ -12,12 +12,6 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels
 		{ 
 			get { return _hello; }
 			set { _hello = value; RaisePropertyChanged(() => Hello); }
-		}
-
-		public override void Start ()
-		{
-			base.Start ();
-			Mvx.Resolve<IPushwooshService>().Register ();
 		}
 
 		public void HandleQueuedMessages()

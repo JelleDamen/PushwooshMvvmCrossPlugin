@@ -1,6 +1,6 @@
 ﻿using System;
-using Cirrious.CrossCore.Platform;
 using System.IO;
+using MvvmCross.Platform.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Droid
 {

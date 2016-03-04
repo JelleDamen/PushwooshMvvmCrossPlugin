@@ -1,6 +1,6 @@
 ﻿using System;
-using Cirrious.CrossCore;
 using System.Collections.Generic;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh
 {

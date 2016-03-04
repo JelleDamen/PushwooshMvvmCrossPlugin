@@ -1,11 +1,11 @@
 using Android.App;
 using Android.OS;
-using Cirrious.MvvmCross.Droid.Views;
-using Cirrious.CrossCore;
 using SoToGo.Plugins.Pushwoosh.Droid;
 using SoToGo.Plugins.Pushwoosh.Sample.Core.ViewModels;
 using Android.Content;
 using Android.Widget;
+using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Droid.Views
 {
@@ -19,6 +19,8 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Droid.Views
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.FirstView);
+
+			Mvx.Resolve<IPushwooshService> ().Register ();
         }
 
 		protected override void OnViewModelSet ()

@@ -1,6 +1,5 @@
 ﻿using System;
 using SoToGo.Plugins.Pushwoosh.Touch.PushwooshSDK;
-using Cirrious.CrossCore;
 
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {

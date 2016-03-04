@@ -1,6 +1,6 @@
 ﻿using System;
-using Cirrious.CrossCore.Plugins;
-using Cirrious.CrossCore;
+using MvvmCross.Platform.Plugins;
+using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {

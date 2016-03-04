@@ -2,9 +2,9 @@
 using UIKit;
 using SoToGo.Plugins.Pushwoosh.Touch;
 using SoToGo.Plugins.Pushwoosh.Sample.Touch.Views;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.ViewModels;
 using SoToGo.Plugins.Pushwoosh.Sample.Core;
+using MvvmCross.Platform;
+using MvvmCross.Core.ViewModels;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 {
