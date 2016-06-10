@@ -1,6 +1,6 @@
 using MvvmCross.Platform.Plugins;
 
-namespace $rootnamespace$.Droid
+namespace $rootnamespace$.Bootstrap
 {
 	public class PushwooshPluginBootstrap : MvxLoaderPluginBootstrapAction<SoToGo.Plugins.Pushwoosh.PluginLoader, SoToGo.Plugins.Pushwoosh.Droid.Plugin>
 	{
