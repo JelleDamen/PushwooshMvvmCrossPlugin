@@ -1,10 +1,8 @@
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.IoC;
-
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Core
 {
-    public class App : MvxApplication
+    public class App : MvvmCross.Core.ViewModels.MvxApplication
     {
         public override void Initialize()
         {
@@ -14,8 +12,6 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Core
                 .RegisterAsLazySingleton();
 
             RegisterAppStart<ViewModels.FirstViewModel>();
-
         }
-
     }
 }

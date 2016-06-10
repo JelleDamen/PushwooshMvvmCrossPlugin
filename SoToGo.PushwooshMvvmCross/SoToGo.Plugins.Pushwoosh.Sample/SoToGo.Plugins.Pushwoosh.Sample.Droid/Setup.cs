@@ -15,11 +15,10 @@ namespace SoToGo.Plugins.Pushwoosh.Sample.Droid
         {
             return new Core.App();
         }
-		
+
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
         }
-			
     }
 }

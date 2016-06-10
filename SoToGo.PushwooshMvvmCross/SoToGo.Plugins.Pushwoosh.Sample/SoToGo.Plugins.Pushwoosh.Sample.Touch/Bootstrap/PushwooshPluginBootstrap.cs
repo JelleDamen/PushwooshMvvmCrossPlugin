@@ -1,5 +1,4 @@
-﻿using System;
-using MvvmCross.Platform.Plugins;
+﻿using MvvmCross.Platform.Plugins;
 
 namespace SoToGo.Plugins.Pushwoosh.Sample.Touch
 {
