@@ -1,8 +1,9 @@
-using Cirrious.CrossCore.Plugins;
+using MvvmCross.Platform.Plugins;
 
-namespace $rootnamespace$.Bootstrap
+namespace $rootnamespace$.Touch
 {
-    public class PushwooshPluginBootstrap : MvxLoaderPluginBootstrapAction<SoToGo.Plugins.Pushwoosh.PluginLoader, SoToGo.Plugins.Pushwoosh.Touch.Plugin>
+	public class PushwooshPluginBootstrap : MvxLoaderPluginBootstrapAction<SoToGo.Plugins.Pushwoosh.PluginLoader, SoToGo.Plugins.Pushwoosh.Touch.Plugin>
 	{
 	}
 }
+
