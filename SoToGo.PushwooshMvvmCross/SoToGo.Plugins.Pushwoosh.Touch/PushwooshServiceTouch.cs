@@ -1,5 +1,5 @@
 ﻿using System;
-using SoToGo.Plugins.Pushwoosh.Touch.PushwooshSDK;
+using Pushwoosh;
 
 namespace SoToGo.Plugins.Pushwoosh.Touch
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 using Foundation;
-using SoToGo.Plugins.Pushwoosh.Touch.PushwooshSDK;
+using Pushwoosh;
 using System.Threading.Tasks;
 using MvvmCross.iOS.Platform;
 using MvvmCross.Platform;
