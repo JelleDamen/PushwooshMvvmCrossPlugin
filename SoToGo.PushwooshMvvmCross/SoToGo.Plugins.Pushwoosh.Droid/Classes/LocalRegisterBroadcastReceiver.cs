@@ -5,7 +5,7 @@ using MvvmCross.Platform;
 
 namespace SoToGo.Plugins.Pushwoosh.Droid
 {
-	class LocalRegisterBroadcastReceiver : BaseRegistrationReceiver
+	public class LocalRegisterBroadcastReceiver : BaseRegistrationReceiver
 	{
 		protected override void OnRegisterActionReceive (Context p0, Intent intent)
 		{
