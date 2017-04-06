@@ -29,7 +29,6 @@ Task("package")
 	.Does(() =>
 {
 	NuGetPack(new FilePath("../SoToGo.Plugins.Pushwoosh.nuspec"), new NuGetPackSettings());
-	MoveFiles("./*.nupkg", "./output");
 });
 
 Task("publish")
