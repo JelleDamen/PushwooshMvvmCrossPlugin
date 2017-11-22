@@ -1,3 +1,6 @@
+# Important: DEPRECATED!!
+Please use the Nuget package by Pushwoosh: https://packages.nuget.org/profiles/Pushwoosh
+
 # Pushwoosh plugin for MvvmCross
 MvvmCross plugin that wraps the native Pushwoosh SDK
 
